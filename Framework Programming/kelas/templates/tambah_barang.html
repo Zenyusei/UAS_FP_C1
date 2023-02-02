@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} ItemGameStore {% endblock %}
+
+{% block content %}
+{% load static %}
+<section id="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                {% for message in messages %}
+                    {% if message %}
+                        <div class="alert alert-success">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                    <a href="/dftr" class="btn btn-danger">Kembali</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'baseadm.html' %}
+
+{% block title %} ItemGameStore | Admin {% endblock %}
+
+{% block content %}
+  {% for message in get_flashed_messages() %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+<style>
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+</style>
+<section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Experimental page</h1>
+          <p class="lead text-muted">Hai, {{session['username']}}</p>
+        </div>
+      </section>
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'baseusr.html' %}
+
+{% block title %} ItemGameStore | Store {% endblock %}
+
+{% block content %}
+<section id="isi">
+    <div class="container mt-5">
+        <div class="judul-kategori" style="background-color: #c0c0c0; padding: 5px 10px;">
+            <h5 class:>KATEGORI GAME</h5>
+        </div>
+        <div class="row text-center row-container mt-2" style="background-color: #c0c0c0; padding: 5px 10px;">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="menu kategori">
+                    <a href="#"><img src="{{url_for('static',filename = 'kat1.png')}}" alt="" width="100"
+                            height="100"></a>
+                    <p>Mobile Game</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="menu kategori">
+                    <a href="#"><img src="{{url_for('static',filename = 'kat2.png')}}" alt="" width="100"
+                            height="100"></a>
+                    <p>PC Game</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="menu kategori">
+                    <a href="#"><img src="{{url_for('static',filename = 'kat3.png')}}" alt="" width="100"
+                            height="100"></a>
+                    <p>Console Game</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="menu kategori">
+                    <a href="#"><img src="{{url_for('static',filename = 'kat4.png')}}" alt="" width="100"
+                            height="100"></a>
+                    <p>Voucher Game</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{url_for('static',filename = 'carimg1.jpg')}}" class="d-block w-100"
+                            alt="Clash of Clan">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{url_for('static',filename = 'carimg2.jpg')}}" class="d-block w-100"
+                            alt="Clash Royale">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{url_for('static',filename = 'carimg3.jpg')}}" class="d-block w-100"
+                            alt="Brawl Stars">
+                    </div>
+                </div>
+                <div class="album py-5 bg-light">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="{{url_for('static',filename = 'carimg7.jpg')}}"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">Google Play: Voucher</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group"><a href="{{ url_for('pay') }}">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-secondary">Beli</button></a>
+                                            </div>
+                                            <small class="text-muted">Rp.100.000</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="{{url_for('static',filename = 'carimg8.jpg')}}"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">Steam Wallet: Gift Card</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group"><a href="{{ url_for('pay') }}">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-secondary">Beli</button></a>
+                                            </div>
+                                            <small class="text-muted">Rp.100.000</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'baseusr.html' %}
+
+{% block title %} ItemGameStore | Bayar {% endblock %}
+
+{% block content %}
+<div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">E-Wallet</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Dana</li>
+              <li>Gopay</li>
+              <li>OVO</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Bayar</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Paypal</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Paypal</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary">Bayar</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Credit Card</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Visa</li>
+              <li>Mastercard</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary">Bayar</button>
+          </div>
+        </div>
+      </div>
+{% endblock %}

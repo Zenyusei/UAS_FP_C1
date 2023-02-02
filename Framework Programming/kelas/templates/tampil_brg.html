@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} ItemGameStore {% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container">
+    <p><a href="/addbrg" class="btn btn-primary">Tambah Data</a> </p>
+    {% for message in messages %}
+    {% if message %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endif %}
+    {% endfor %}
+    <table class="table table-striped">
+
+
+        <h2 class="align-center">Available Items</h2>
+        <tr>
+            <th>Kode</th>
+            <th>Nama</th>
+            <th>Stok</th>
+            <th>Harga</th>
+            <th>Tipe</th>
+            <th>Aksi</th>
+        </tr>
+        {% for Barang in barangs %}
+        <tr>
+            <td><a href="{% url 'ubah_brg' Barang.id %}">{{ Barang.kodebrg }}</a></td>
+            <td>{{ Barang.nama }}</td>
+            <td>{{ Barang.stok }}</td>
+            <td>{{ Barang.harga }}</td>
+            <td>{{ Barang.tipe_brg }}</td>
+            <td><button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#hapus-{{ Barang.id }}">Hapus</button></td>
+
+            <div class="modal fade" id="hapus-{{ Barang.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Yakin akan di hapus? </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Nama Barang: {{ Barang.nama }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <a href="{% url 'hapus_brg' Barang.id %}" class="btn btn-danger">Yakin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+{% endblock %}
